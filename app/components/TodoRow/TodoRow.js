@@ -1,6 +1,7 @@
 import Checkbox from "@/app/components/Checkbox/Checkbox";
 import TrashIcon from "@/app/components/icons/TrashIcon";
 import styles from "./TodoRow.module.scss";
+import { useState } from "react";
 
 export default function TodoRow({
   onSubmit,
@@ -9,6 +10,8 @@ export default function TodoRow({
   deadline = "",
   completed,
 }) {
+  const [prevTaskName, setPrevTaskName] = useState("");
+
   function handleDelete() {
     onSubmit((prev) => {
       return prev.filter((task) => task.id !== id);
@@ -38,7 +41,13 @@ export default function TodoRow({
         <input
           type="text"
           value={name}
+          onFocus={() => setPrevTaskName(name)}
           onChange={(e) => handleChange("name", e.target.value)}
+          onBlur={(e) => {
+            if (e.target.value === "") {
+              handleChange("name", prevTaskName);
+            }
+          }}
         />
       </div>
       <div className={`${styles.col} ${styles.deadline}`}>
