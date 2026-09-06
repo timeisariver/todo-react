@@ -1,0 +1,69 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.row {
+  @include m.row;
+
+  padding: 12px;
+  font-size: 14px;
+  border-bottom: 1px solid v.$border-color;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: v.$hover-color;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.name {
+  justify-content: flex-start;
+  overflow-wrap: anywhere;
+
+  input[type="text"] {
+    @include m.inline-input;
+
+    text-align: left;
+  }
+}
+
+.deadline {
+  input[type="date"] {
+    @include m.inline-input;
+
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+
+    &::-webkit-calendar-picker-indicator {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.trash {
+  font-size: 15px;
+  color: v.$font-color-weak;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: v.$danger-color;
+  }
+}

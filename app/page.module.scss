@@ -1,0 +1,55 @@
+@use "./styles/variables" as v;
+
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  line-height: 1.5;
+  color: v.$font-color;
+  background-color: v.$background-color;
+
+  color-scheme: light;
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: v.$primary-color;
+    cursor: pointer;
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 16px 32px;
+  background-color: rgba(v.$surface-color, 0.85);
+  border-bottom: 1px solid v.$border-color;
+  backdrop-filter: blur(8px);
+}
+
+.headerText {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.main {
+  display: grid;
+  gap: 32px;
+  width: 100%;
+  max-width: 986px;
+  padding: 0 32px;
+  margin: 64px auto;
+}

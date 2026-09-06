@@ -1,0 +1,49 @@
+@use "../../styles/variables" as v;
+
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: v.$surface-color;
+  border: 1.5px solid v.$border-color-strong;
+  border-radius: v.$radius-sm;
+  cursor: pointer;
+
+  &:hover {
+    border-color: v.$primary-color;
+  }
+}
+
+.checkbox .input[type="checkbox"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.check {
+  font-size: 11px;
+  color: v.$font-color-light;
+  opacity: 0;
+  transform: scale(0.6);
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.checked {
+  background-color: v.$primary-color;
+  border-color: v.$primary-color;
+
+  .check {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

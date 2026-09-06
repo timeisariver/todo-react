@@ -1,0 +1,46 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.content {
+  @include m.card;
+
+  display: grid;
+  gap: 16px;
+}
+
+.showCompleted {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 13px;
+  color: v.$font-color-weak;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: v.$primary-color;
+  }
+}
+
+.head {
+  @include m.row;
+
+  padding: 0 12px 12px;
+  border-bottom: 1px solid v.$border-color;
+}
+
+.headItem {
+  font-size: 12px;
+  font-weight: 600;
+  color: v.$font-color-weak;
+  text-align: center;
+}
+
+.headItemName {
+  text-align: left;
+}
+
+.list {
+  display: grid;
+}
