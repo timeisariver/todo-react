@@ -35,7 +35,11 @@ export default function TodoRow({
   return (
     <div className={styles.row}>
       <div className={styles.col}>
-        <Checkbox checked={completed} handleToggle={handleToggle} />
+        <Checkbox
+          checked={completed}
+          handleToggle={handleToggle}
+          label={`${name} を完了にする`}
+        />
       </div>
       <div className={`${styles.col} ${styles.name}`}>
         <input

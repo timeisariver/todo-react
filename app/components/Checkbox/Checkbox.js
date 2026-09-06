@@ -1,7 +1,7 @@
 import CheckIcon from "@/app/components/icons/CheckIcon";
 import styles from "./Checkbox.module.scss";
 
-export default function Checkbox({ checked, handleToggle }) {
+export default function Checkbox({ checked, handleToggle, label }) {
   const className = [styles.checkbox, checked && styles.checked]
     .filter(Boolean)
     .join(" ");
@@ -11,6 +11,7 @@ export default function Checkbox({ checked, handleToggle }) {
       <input
         type="checkbox"
         className={styles.input}
+        aria-label={label}
         checked={checked}
         onChange={handleToggle}
       />
