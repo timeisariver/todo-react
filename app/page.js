@@ -9,25 +9,25 @@ import styles from "./page.module.scss";
 export default function Home() {
   const [tasks, setTasks] = useState([
     {
-      id: crypto.randomUUID(),
+      id: "1",
       name: "デザインカンプを確認する",
       deadline: "2026-09-10",
       completed: false,
     },
     {
-      id: crypto.randomUUID(),
+      id: "2",
       name: "コンポーネントに分割する",
       deadline: "2026-09-12",
       completed: false,
     },
     {
-      id: crypto.randomUUID(),
+      id: "3",
       name: "SCSS Module に置き換える",
       deadline: "",
       completed: false,
     },
     {
-      id: crypto.randomUUID(),
+      id: "4",
       name: "環境構築",
       deadline: "2026-09-01",
       completed: true,

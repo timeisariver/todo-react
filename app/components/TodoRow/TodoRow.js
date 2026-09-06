@@ -34,8 +34,10 @@ export default function TodoRow({
       <div className={`${styles.col} ${styles.deadline}`}>
         <input type="date" defaultValue={deadline} />
       </div>
-      <div className={`${styles.col} ${styles.delete}`} onClick={handleDelete}>
-        <TrashIcon className={styles.trash} />
+      <div className={`${styles.col} ${styles.delete}`}>
+        <button onClick={handleDelete}>
+          <TrashIcon className={styles.trash} />
+        </button>
       </div>
     </div>
   );

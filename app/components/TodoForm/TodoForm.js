@@ -15,7 +15,7 @@ export default function TodoForm({ onSubmit }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!deadline) setDeadline(new Date());
+    if (!deadline) setDeadline(today());
 
     onSubmit((prev) => [
       ...prev,
