@@ -40,6 +40,7 @@ export default function TodoRow({
       <div className={`${styles.col} ${styles.name}`}>
         <input
           type="text"
+          aria-label="タスク名"
           value={name}
           onFocus={() => setPrevTaskName(name)}
           onChange={(e) => handleChange("name", e.target.value)}
@@ -53,12 +54,17 @@ export default function TodoRow({
       <div className={`${styles.col} ${styles.deadline}`}>
         <input
           type="date"
+          aria-label={`${name} の期限日`}
           value={deadline}
           onChange={(e) => handleChange("deadline", e.target.value)}
         />
       </div>
       <div className={`${styles.col} ${styles.delete}`}>
-        <button onClick={handleDelete}>
+        <button
+          type="button"
+          aria-label={`${name} を削除`}
+          onClick={handleDelete}
+        >
           <TrashIcon className={styles.trash} />
         </button>
       </div>
