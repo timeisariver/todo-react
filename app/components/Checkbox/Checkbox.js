@@ -11,7 +11,7 @@ export default function Checkbox({ checked, handleToggle }) {
       <input
         type="checkbox"
         className={styles.input}
-        defaultChecked={checked}
+        checked={checked}
         onChange={handleToggle}
       />
       <CheckIcon className={styles.check} />
