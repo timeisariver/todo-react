@@ -1,7 +1,7 @@
 import TodoRow from "@/app/components/TodoRow/TodoRow";
 import styles from "./TodoList.module.scss";
 
-export default function TodoList({ tasks }) {
+export default function TodoList({ tasks, onSubmit }) {
   return (
     <div className={styles.content}>
       <label className={styles.showCompleted}>
@@ -19,7 +19,9 @@ export default function TodoList({ tasks }) {
       <div className={styles.list}>
         {tasks.map((task) => (
           <TodoRow
+            onSubmit={onSubmit}
             key={task.id}
+            id={task.id}
             name={task.name}
             deadline={task.deadline}
             completed={task.completed}

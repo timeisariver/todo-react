@@ -57,10 +57,14 @@
   }
 }
 
+.delete {
+  cursor: pointer;
+  height: 100%;
+}
+
 .trash {
   font-size: 15px;
   color: v.$font-color-weak;
-  cursor: pointer;
   transition: color 0.2s;
 
   &:hover {
