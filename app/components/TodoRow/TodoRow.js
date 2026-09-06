@@ -23,16 +23,30 @@ export default function TodoRow({
     );
   }
 
+  function handleChange(type, data) {
+    onSubmit((prev) =>
+      prev.map((task) => (task.id === id ? { ...task, [type]: data } : task)),
+    );
+  }
+
   return (
     <div className={styles.row}>
       <div className={styles.col}>
         <Checkbox checked={completed} handleToggle={handleToggle} />
       </div>
       <div className={`${styles.col} ${styles.name}`}>
-        <input type="text" defaultValue={name} />
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => handleChange("name", e.target.value)}
+        />
       </div>
       <div className={`${styles.col} ${styles.deadline}`}>
-        <input type="date" defaultValue={deadline} />
+        <input
+          type="date"
+          value={deadline}
+          onChange={(e) => handleChange("deadline", e.target.value)}
+        />
       </div>
       <div className={`${styles.col} ${styles.delete}`}>
         <button onClick={handleDelete}>
