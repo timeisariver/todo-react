@@ -23,6 +23,7 @@
   align-items: center;
   justify-content: center;
   min-width: 0;
+  height: 100%;
 }
 
 .name {
@@ -59,7 +60,6 @@
 
 .delete {
   cursor: pointer;
-  height: 100%;
 }
 
 .trash {
