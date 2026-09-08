@@ -3,8 +3,8 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
   output: "export",
 
-  basePath: isProd ? "/react-todo" : "",
-  assetPrefix: isProd ? "/react-todo" : "",
+  basePath: isProd ? "/todo-react" : "",
+  assetPrefix: isProd ? "/todo-react" : "",
 
   images: {
     unoptimized: true,
