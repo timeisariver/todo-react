@@ -44,3 +44,10 @@
 .list {
   display: grid;
 }
+
+.empty {
+  padding: 32px 12px;
+  font-size: 14px;
+  color: v.$font-color-weak;
+  text-align: center;
+}

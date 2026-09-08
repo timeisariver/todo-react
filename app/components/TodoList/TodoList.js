@@ -5,6 +5,8 @@ import { useState } from "react";
 export default function TodoList({ tasks, onSubmit }) {
   const [showCompleted, setShowCompleted] = useState(false);
 
+  const visibleTasks = tasks.filter((task) => showCompleted || !task.completed);
+
   return (
     <div className={styles.content}>
       <label className={styles.showCompleted}>
@@ -24,9 +26,14 @@ export default function TodoList({ tasks, onSubmit }) {
         <div className={styles.headItem}>削除</div>
       </div>
       <div className={styles.list}>
-        {tasks
-          .filter((task) => showCompleted || !task.completed)
-          .map((task) => {
+        {visibleTasks.length === 0 ? (
+          <p className={styles.empty}>
+            {tasks.length === 0
+              ? "タスクがありません。上のフォームから追加してください。"
+              : "未完了のタスクはありません。"}
+          </p>
+        ) : (
+          visibleTasks.map((task) => {
             return (
               <TodoRow
                 onSubmit={onSubmit}
@@ -37,7 +44,8 @@ export default function TodoList({ tasks, onSubmit }) {
                 completed={task.completed}
               />
             );
-          })}
+          })
+        )}
       </div>
     </div>
   );
