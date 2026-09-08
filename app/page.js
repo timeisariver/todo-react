@@ -23,14 +23,8 @@ export default function Home() {
     {
       id: "3",
       name: "SCSS Module に置き換える",
-      deadline: "",
+      deadline: "2026-09-14",
       completed: false,
-    },
-    {
-      id: "4",
-      name: "環境構築",
-      deadline: "2026-09-01",
-      completed: true,
     },
   ]);
 
