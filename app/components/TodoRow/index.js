@@ -2,6 +2,7 @@ import Checkbox from "@/app/components/Checkbox";
 import TrashIcon from "@/app/components/icons/TrashIcon";
 import styles from "./TodoRow.module.scss";
 import { useState } from "react";
+import clsx from "clsx";
 
 export default function TodoRow({
   onSubmit,
@@ -14,9 +15,7 @@ export default function TodoRow({
   const [prevTaskName, setPrevTaskName] = useState("");
   const [isLeaving, setIsLeaving] = useState(false);
 
-  const rowClassName = [styles.row, isLeaving && styles.leaving]
-    .filter(Boolean)
-    .join(" ");
+  const rowClassName = clsx(styles.row, isLeaving && styles.leaving);
 
   function handleDelete() {
     onSubmit((prev) => {
