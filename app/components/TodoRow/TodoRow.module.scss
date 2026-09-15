@@ -18,6 +18,21 @@
   }
 }
 
+.leaving {
+  pointer-events: none;
+  animation: fade-out 0.3s ease forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 .col {
   display: flex;
   align-items: center;

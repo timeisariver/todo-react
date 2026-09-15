@@ -9,8 +9,14 @@ export default function TodoRow({
   name,
   deadline = "",
   completed,
+  showCompleted,
 }) {
   const [prevTaskName, setPrevTaskName] = useState("");
+  const [isLeaving, setIsLeaving] = useState(false);
+
+  const rowClassName = [styles.row, isLeaving && styles.leaving]
+    .filter(Boolean)
+    .join(" ");
 
   function handleDelete() {
     onSubmit((prev) => {
@@ -18,12 +24,21 @@ export default function TodoRow({
     });
   }
 
-  function handleToggle() {
+  function toggleCompleted() {
+    setIsLeaving(false);
     onSubmit((prev) =>
       prev.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task,
       ),
     );
+  }
+
+  function handleToggle() {
+    if (!completed && !showCompleted) {
+      setIsLeaving(true);
+    } else {
+      toggleCompleted();
+    }
   }
 
   function handleChange(type, data) {
@@ -33,10 +48,13 @@ export default function TodoRow({
   }
 
   return (
-    <div className={styles.row}>
+    <div
+      className={rowClassName}
+      onAnimationEnd={isLeaving ? toggleCompleted : undefined}
+    >
       <div className={styles.col}>
         <Checkbox
-          checked={completed}
+          checked={completed || isLeaving}
           handleToggle={handleToggle}
           label={`${name} を完了にする`}
         />

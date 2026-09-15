@@ -42,6 +42,7 @@ export default function TodoList({ tasks, onSubmit }) {
                 name={task.name}
                 deadline={task.deadline}
                 completed={task.completed}
+                showCompleted={showCompleted}
               />
             );
           })
