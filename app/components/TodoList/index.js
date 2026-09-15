@@ -1,4 +1,4 @@
-import TodoRow from "@/app/components/TodoRow/TodoRow";
+import TodoRow from "@/app/components/TodoRow";
 import styles from "./TodoList.module.scss";
 import { useState } from "react";
 

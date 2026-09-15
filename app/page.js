@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import TodoForm from "@/app/components/TodoForm/TodoForm";
-import TodoList from "@/app/components/TodoList/TodoList";
+import TodoForm from "@/app/components/TodoForm";
+import TodoList from "@/app/components/TodoList";
 import styles from "./page.module.scss";
 
 export default function Home() {

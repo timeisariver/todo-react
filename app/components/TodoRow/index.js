@@ -1,4 +1,4 @@
-import Checkbox from "@/app/components/Checkbox/Checkbox";
+import Checkbox from "@/app/components/Checkbox";
 import TrashIcon from "@/app/components/icons/TrashIcon";
 import styles from "./TodoRow.module.scss";
 import { useState } from "react";
