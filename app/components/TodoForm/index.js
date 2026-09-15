@@ -1,20 +1,19 @@
 import { useState } from "react";
 import styles from "./TodoForm.module.scss";
 
+function today() {
+  const d = new Date();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+
 export default function TodoForm({ onSubmit }) {
   const [input, setInput] = useState("");
   const [deadline, setDeadline] = useState("");
 
-  function today() {
-    const d = new Date();
-    const m = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${d.getFullYear()}-${m}-${day}`;
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
-
 
     onSubmit((prev) => [
       ...prev,
